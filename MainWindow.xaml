@@ -6,9 +6,13 @@
         xmlns:local="clr-namespace:FFXIVTimeStampParser"
         xmlns:xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="480" Width="840" MinWidth="838" MinHeight="480">
+        Title="FFXIVTimeStampParser" Height="480" Width="840" MinWidth="838" MinHeight="480">
     <Grid>
-        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="252"/>
@@ -16,14 +20,20 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="inputField" Text="STARTTIME   TITLE&#xA;2021/09/10  --:--:--   ALEXANDER" TextWrapping="Wrap" Margin="10,10,10,10" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
             <TextBox x:Name="outputField" Text="--:--:--  Try 1" TextWrapping="Wrap" Margin="10,10,10,10" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Grid.Column="2"/>
-            <Button Content="Convert &gt;" Grid.Column="1" VerticalAlignment="Top" Click="Button_Click" Width="100" Height="20" Margin="71,231,72,170"/>
-            <Label Content="Prefix" Grid.Column="1" Margin="0,160,204,250" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="40" MinHeight="25" Width="40" Height="25"/>
-            <Label Content="00:00:00" Grid.Column="1" Margin="21,184,166,225" HorizontalAlignment="Center" VerticalAlignment="Top" Width="55" Height="25" MinWidth="55" MinHeight="25"/>
-            <TextBox x:Name="prefixField" Grid.Column="1" Text="Try " TextWrapping="Wrap" HorizontalContentAlignment="Right" Height="20" VerticalAlignment="Top" Width="120" Margin="82,187,38,226" HorizontalAlignment="Center" MinWidth="120" MinHeight="20"/>
-            <Label Content="1" Grid.Column="1" Margin="210,184,12,222" HorizontalAlignment="Center" VerticalAlignment="Top" Width="17" Height="26" MinWidth="17" MinHeight="23"/>
-            <Label Content="Stream Starts" Grid.Column="1" Margin="4,89,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Height="26" MinWidth="82" MinHeight="26"/>
-            <xceed:TimePicker x:Name="startTimeField" Grid.Column="1" Watermark="00:00:00" Margin="108,89,0,0" CultureInfo="ja-JP" Height="25" VerticalAlignment="Top" Format="LongTime" HorizontalAlignment="Left" Width="100" MinWidth="100" MinHeight="25" DefaultValue="2021-09-10"/>
-            <Button x:Name="buttonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Width="100" Click="buttonClear_Click"/>
+            <Button Content="Convert &gt;" Grid.Column="1" VerticalAlignment="Top" Click="Button_Click" Width="100" Height="20" Margin="75,370,77,0"/>
+            <Label Content="Prefix" Grid.Column="1" Margin="4,299,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="40" MinHeight="25" Width="40" Height="25"/>
+            <Label Content="00:00:00" Grid.Column="1" Margin="26,323,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Height="25" MinWidth="55" MinHeight="25"/>
+            <TextBox x:Name="prefixField" Grid.Column="1" Text="Try " TextWrapping="Wrap" HorizontalContentAlignment="Right" Height="20" VerticalAlignment="Top" Width="120" Margin="88,326,0,0" HorizontalAlignment="Left" MinWidth="120" MinHeight="20"/>
+            <Label Content="1" Grid.Column="1" Margin="216,323,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="17" Height="26" MinWidth="17" MinHeight="23"/>
+            <Label x:Name="Label_streamstarts" Content="Stream Starts" Grid.Column="1" Margin="4,207,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Height="26" MinWidth="82" MinHeight="26" IsEnabled="False"/>
+            <xceed:TimePicker x:Name="startTimeField" Grid.Column="1" Watermark="00:00:00" Margin="108,207,0,0" CultureInfo="ja-JP" Height="25" VerticalAlignment="Top" Format="LongTime" HorizontalAlignment="Left" Width="100" MinWidth="100" MinHeight="25" DefaultValue="2021-09-10" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+            <Button x:Name="buttonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Center" Margin="0,401,0,0" VerticalAlignment="Top" Width="100" Click="buttonClear_Click"/>
+            <Label x:Name="Label_api" Content="YouTube Data API key" Grid.Column="1" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="Textbox_api" Grid.Column="1" HorizontalAlignment="Left" Margin="21,97,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="221"/>
+            <Label x:Name="Label_videoid" Content="Video ID : /watch?v=XXXXXXXX" Grid.Column="1" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="Textbox_videoid" Grid.Column="1" HorizontalAlignment="Left" Margin="21,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+            <RadioButton x:Name="Radio_streamid" Content="stream id" Grid.Column="1" HorizontalAlignment="Left" Margin="4,51,0,0" VerticalAlignment="Top" Checked="Radio_streamid_Checked" IsChecked="True"/>
+            <RadioButton x:Name="Radio_startstime" Content="Directly input start time" Grid.Column="1" HorizontalAlignment="Left" Margin="4,187,0,0" VerticalAlignment="Top" Checked="Radio_startstime_Checked"/>
         </Grid>
 
     </Grid>
