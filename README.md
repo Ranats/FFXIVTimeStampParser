@@ -5,7 +5,7 @@ ___
 --
 Calculates the difference from the stream starts time and combat starts time, and generates chapters labeled by the number of wipes from the text data consisting of Title, EndTime, Duration, etc. including "StartTime"
 
-![view](https://user-images.githubusercontent.com/9674834/132993929-04f3a6b0-ce33-49b8-90f7-ae190cb2e283.gif)
+![view](https://user-images.githubusercontent.com/9674834/132994358-8108fa2c-0c78-48ff-aa55-0719d8095ece.gif)
 
 Using some NuGet package
 - Extended.Wpf.Toolkit
