@@ -25,11 +25,17 @@ namespace FFXIVTimeStampParser
     public partial class MainWindow : Window
     {
         private FetchMode fetch_mode;
+        private string api_key;
 
         public MainWindow()
         {
             InitializeComponent();
             fetch_mode = FetchMode.api;
+
+            var parser = new IniParser.FileIniDataParser();
+            var data = parser.ReadFile("settings.ini");
+            api_key = data.Global["API_KEY"];
+            Textbox_api.Text = api_key;
         }
 
         private enum FetchMode
@@ -60,8 +66,7 @@ namespace FFXIVTimeStampParser
                 int index = Array.IndexOf(head, "STARTTIME") + 1;
 
                 int count = 0;
-                //                var output = "";
-                var output = startTime.ToString() + "\n";
+                var output = "";
                 foreach (var line in lines)
                 {
                     if (count == 0)
@@ -179,6 +184,10 @@ namespace FFXIVTimeStampParser
 
             Label_streamstarts.IsEnabled = true;
             startTimeField.IsEnabled = true;
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -10,5 +10,6 @@ Calculates the difference from the stream starts time and combat starts time, an
 Using some NuGet package
 - Extended.Wpf.Toolkit
 - Google.Apis.Youtube.v3
+- ini-parser
 
 We are not responsible for any damage that may be caused by the use of this software.

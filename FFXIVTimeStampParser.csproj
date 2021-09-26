@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
     <PackageReference Include="Google.Apis.YouTube.v3" Version="1.55.0.2440" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
   </ItemGroup>
 
   <ItemGroup>
